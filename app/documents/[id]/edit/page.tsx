@@ -23,9 +23,9 @@ export default function EditDocumentPage() {
 
   async function onSubmit(formData: FormData) {
     update((current) => addOrUpdateDocument(current, {
-      id: documentRecord.id,
-      profile_id: String(formData.get("profile_id") || documentRecord.profile_id),
-      document_type: String(formData.get("document_type") || documentRecord.document_type) as "iqama" | "passport" | "reentry_visa" | "other",
+      id: documentRecord!.id,
+      profile_id: String(formData.get("profile_id") || documentRecord!.profile_id),
+      document_type: String(formData.get("document_type") || documentRecord!.document_type) as "iqama" | "passport" | "reentry_visa" | "other",
       label: String(formData.get("label") || "") || null,
       expiry_date: String(formData.get("expiry_date") || "") || null,
       issue_date: String(formData.get("issue_date") || "") || null,
@@ -36,7 +36,7 @@ export default function EditDocumentPage() {
       alert_30: formData.get("alert_30") === "on",
       alert_7: formData.get("alert_7") === "on"
     }));
-    router.push(`/documents/${documentRecord.id}`);
+    router.push(`/documents/${documentRecord!.id}`);
   }
 
   return (
