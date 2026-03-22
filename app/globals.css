@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-canvas text-ink antialiased;
+  background-image:
+    radial-gradient(circle at top left, rgba(209, 140, 99, 0.18), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(53, 104, 89, 0.14), transparent 24%);
+}
+
+a {
+  @apply transition-colors;
+}
+
+input,
+select,
+textarea {
+  @apply w-full rounded-2xl border border-stone-300 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-clay focus:ring-2 focus:ring-clay/20;
+}
+
+label {
+  @apply mb-2 block text-sm font-medium text-ink;
+}
+
+button {
+  @apply transition;
+}

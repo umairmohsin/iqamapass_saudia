@@ -1,0 +1,11 @@
+{
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/onboarding/page": "app/onboarding/page.js",
+  "/page": "app/page.js",
+  "/(auth)/signup/page": "app/(auth)/signup/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/trips/page": "app/trips/page.js",
+  "/documents/new/page": "app/documents/new/page.js",
+  "/family/page": "app/family/page.js",
+  "/settings/page": "app/settings/page.js"
+}
