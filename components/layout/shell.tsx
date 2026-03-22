@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Home, Files, Plane, Users, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const nav = [
+import Router from "next/router";
+const nav: Array<{ href: string; label: string; icon: React.ComponentType<{ className?: string }> }> = [
   { href: "/dashboard", label: "Dashboard", icon: Home },
   { href: "/documents/new", label: "Documents", icon: Files },
   { href: "/trips", label: "Trips", icon: Plane },
@@ -24,7 +24,7 @@ export function AppShell({ children, currentPath }: { children: React.ReactNode;
             return (
               <Link
                 key={item.href}
-                href={item.href}
+                href={item.href as any}
                 className={cn(
                   "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm",
                   active ? "bg-ink text-white" : "bg-white/80 text-ink hover:bg-white"
@@ -45,7 +45,7 @@ export function AppShell({ children, currentPath }: { children: React.ReactNode;
           return (
             <Link
               key={item.href}
-              href={item.href}
+              href={item.href as any}
               className={cn(
                 "flex flex-col items-center rounded-full px-3 py-2 text-[11px]",
                 active ? "text-clay" : "text-muted"
